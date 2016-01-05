@@ -1,9 +1,19 @@
+
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+
+var mongoose = require('mongoose');
+
+require('.models/TareasBD');//se requiere el archivo del model de la base de datos TareasBD, para poder utiliza la instancia y el modelo de la base de datos
+
+mongoose.connect('mongodb://localhost/TareasDB') //como la base de datos no se creo, mongodb la crea automaticamente
+                                                  //en este caso la base de datos que creara mongo sera TareaBD
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -58,3 +68,5 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+
