@@ -9,10 +9,11 @@ var bodyParser = require('body-parser');
 
 var mongoose = require('mongoose');
 
-require('.models/TareasBD');//se requiere el archivo del model de la base de datos TareasBD, para poder utiliza la instancia y el modelo de la base de datos
+require('./models/Tareas.js');/*se requiere el archivo del model de la base de datos TareasBD, para poder utiliza la instancia y el modelo de la base de datos*/
 
-mongoose.connect('mongodb://localhost/TareasDB') //como la base de datos no se creo, mongodb la crea automaticamente
-                                                  //en este caso la base de datos que creara mongo sera TareaBD
+
+mongoose.connect('mongodb://localhost/tareas') //como la base de datos no se creo, mongodb la crea automaticamente
+                                                  //en este caso la base de datos que creara mongo sera tareas
 
 
 var routes = require('./routes/index');
